@@ -15,4 +15,6 @@ $users = [
 //Sur une connection réussie, on renvoie vers la page résultat qui dit bravo.
 //elle a un bouton déconnexion (retour accueil)
 //
-//
+//JEUX SQL :
+// https://sql-island.informatik.uni-kl.de/
+//https://mystery.knightlab.com/
