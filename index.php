@@ -31,6 +31,14 @@
         </div>
     </div>
 </nav>
+<?php
+if(!empty($_GET["message"])){ ?>
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong><?= $_GET["message"] ?></strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php } ?>
 
 
 <div class="container">
@@ -39,14 +47,14 @@
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="username">
+            <input name="userName" type="text" class="form-control" placeholder="username">
         </div>
 
 
 
 
         <label for="inputPassword5" class="form-label">Password</label>
-        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+        <input type="password" name="password" class="form-control" aria-describedby="passwordHelpBlock">
         <div id="passwordHelpBlock" class="form-text">
             Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
         </div>
