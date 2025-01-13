@@ -22,7 +22,7 @@ $users = [
 
 
 if(empty($_POST['userName']) || empty($_POST['password'])) {
-redirect("formulaire mal rempli");
+redirect("formulaire  mal rempli");
 }
 
 $username = $_POST["userName"];
