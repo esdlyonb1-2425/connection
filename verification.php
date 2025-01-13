@@ -6,17 +6,18 @@ function redirect($message, $page =null)
     $url = "index.php";
     if($page)
     {
-        $url = "resultat.php";
+        $url = "articles.php";
     }
     header("Location: $url?message=$message");
     exit;
 }
 
+// motDePasseDeLuc4, patate, choucroute, surf
 $users = [
-    "luc"=> "motDePasseDeLuc4",
-    "michel"=> "pasteque",
-    "eglantine"=> "choucroute",
-    "patricia"=> "surf"
+    "luc"=> "53f8a9f698d7d2ea9c8a3a6c8d5ab698",
+    "michel"=> "945e9f0b4e381b13aa70b94b89a28709",
+    "eglantine"=> "4fa9239cbfe7d76a31bb46471ce6a976",
+    "patricia"=> "353c8773694fbf1251dec54d98b614a1"
 ];
 
 
@@ -26,7 +27,8 @@ redirect("formulaire  mal rempli");
 }
 
 $username = $_POST["userName"];
-$password = $_POST["password"];
+$unEcryptedPassword = $_POST["password"];
+$hashedPassword = md5($unEcryptedPassword);
 
 //utilisateur inconnu
 if(!isset($users[$username])){
@@ -34,11 +36,11 @@ if(!isset($users[$username])){
 }
 
 
-if($users[$username] != $password){
+if($users[$username] != $hashedPassword){
     redirect("mauvais mot de passe");
 }
 
-redirect("bienvenue, bien connecté","resultat.php");
+redirect("bienvenue, bien connecté","articles.php");
 
 
 
